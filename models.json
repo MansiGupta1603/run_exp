@@ -1,0 +1,12 @@
+[
+    {
+        "model_name": "EleutherAI/pythia-160m",
+        "model_family": "gpt_neox",
+        "model_path": "/path/to/model_1"
+    },
+    {
+        "model_name": "EleutherAI/pythia-410m",
+        "model_family": "gpt_neox",
+        "model_path": "/path/to/model_2"
+    }
+]
