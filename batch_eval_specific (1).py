@@ -61,7 +61,7 @@ def load_config_from_json(
     json_file: Path,
     config_type: Literal["model", "quant", "layer_swap", "mixconfig"]
 ) -> Iterator[QuantConfig]:
-    with open(f"configs/{json_file}", "r", encoding="utf-8") as f:
+    with open(f"{json_file}", "r", encoding="utf-8") as f:
         configs = json.load(f)
     match config_type:
         case "mixconfig":
