@@ -3,10 +3,5 @@
         "model_name": "EleutherAI/pythia-2.8B",
         "model_family": "gpt_neox",
         "model_path": "/path/to/model_1"
-    },
-    {
-        "model_name": "EleutherAI/pythia-6.9B",
-        "model_family": "gpt_neox",
-        "model_path": "/path/to/model_2"
     }
 ]
