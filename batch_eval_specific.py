@@ -178,7 +178,7 @@ class MemorizationAnalyser:
         for context_length in tqdm(context_lengths, desc="Context Lengths"):
             print(f"Model: {self.model_name}, Dataset: {self.dataset_name}, \
                       Context Length: {context_length}, Target Length: {target_length}")
-            for i, prompts in enumerate(tqdm(self.dataset, desc=f"Processing Context {context_length}", leave=False)): 
+            for i, prompts in enumerate(tqdm(self.dataset, leave=True, ncols=100, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt}")): 
                 
                 inputs = self.tokenizer(
                     prompts["text"],
