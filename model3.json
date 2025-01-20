@@ -1,4 +1,4 @@
-[
+[ 
     {
         "model_name": "EleutherAI/pythia-6.9b",
         "model_family": "gpt_neox",
