@@ -7,7 +7,7 @@ import random
 import json
 
 class MemorizationAnalyzer:
-    def __init__(self, model_name="EleutherAI/pythia-2.8b", device="cuda"):
+    def __init__(self, model_name="EleutherAI/pythia-410m", device="cuda"):
         self.model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.full_precision_model = AutoModelForCausalLM.from_pretrained(
@@ -143,7 +143,7 @@ class MemorizationAnalyzer:
      return pruned_results, perplexity_scores
 
 
-    def prune_model(self, amount=0.25):
+    def prune_model(self, amount=0.15):
         """Prune the model using magnitude-based pruning"""
         import torch.nn.utils.prune as prune
         for name, module in self.full_precision_model.named_modules():
@@ -155,7 +155,7 @@ class MemorizationAnalyzer:
 
 if __name__ == "__main__":
     analyzer = MemorizationAnalyzer()
-    analyzer.prune_model(amount=0.25)  
+    analyzer.prune_model(amount=0.15)  
     pruned_results, perplexity_scores = analyzer.evaluate_pruned_model()
     
     print("\nSummary of pruned model results:")
