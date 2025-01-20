@@ -202,7 +202,7 @@ class MemorizationAnalyser:
                     )
                     
                       #print(f"output_ids: {output_ids}")
-                       print(f"decoded output: {self.tokenizer.batch_decode(output_ids)}")
+                      print(f"decoded output: {self.tokenizer.batch_decode(output_ids)}")
         
                 
                 # print((target_tokens == output_ids[:, context_length:context_length + target_length]).all(dim=1).sum().item())
