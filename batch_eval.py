@@ -201,10 +201,11 @@ class MemorizationAnalyser:
                         pad_token_id=self.tokenizer.pad_token_id
                     )
                     
-                      #print(f"output_ids: {output_ids}")
-                      print(f"decoded output: {self.tokenizer.batch_decode(output_ids)}")
+                     
+                print(f"decoded output: {self.tokenizer.batch_decode(output_ids)}")
+                #print(f"output_ids: {output_ids}")
         
-                
+               
                 # print((target_tokens == output_ids[:, context_length:context_length + target_length]).all(dim=1).sum().item())
                 # print(target_tokens.size())
                 self.memorized += (target_tokens == output_ids[:, context_length:context_length + target_length]).all(dim=1).sum().item()
