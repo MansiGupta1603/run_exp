@@ -182,7 +182,7 @@ class MemorizationAnalyser:
                     max_length= max(context_lengths)+target_length,
                 ).to(self.model.device)
                 
-                # print(f"inputs: {inputs}")
+                print(f"inputs: {inputs}")
                 
                 prompt_tokens = inputs["input_ids"][:, :context_length]
                 attention_mask = inputs["attention_mask"][:, :context_length]
@@ -201,8 +201,9 @@ class MemorizationAnalyser:
                         pad_token_id=self.tokenizer.pad_token_id
                     )
                     
-                    # print(f"output_ids: {output_ids}")
-                    # print(f"decoded output: {self.tokenizer.batch_decode(output_ids)}")
+                      #print(f"output_ids: {output_ids}")
+                       print(f"decoded output: {self.tokenizer.batch_decode(output_ids)}")
+        
                 
                 # print((target_tokens == output_ids[:, context_length:context_length + target_length]).all(dim=1).sum().item())
                 # print(target_tokens.size())
