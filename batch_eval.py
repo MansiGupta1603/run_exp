@@ -182,7 +182,7 @@ class MemorizationAnalyser:
                     max_length= max(context_lengths)+target_length,
                 ).to(self.model.device)
                 
-                print(f"inputs: {inputs}")
+                
                 
                 prompt_tokens = inputs["input_ids"][:, :context_length]
                 attention_mask = inputs["attention_mask"][:, :context_length]
